@@ -30,9 +30,10 @@
 			<div class="profile_name" style="float: right; width: 450px; margin-top: 40px; margin-left: 40px;">
 				<h1 style="color: white;"><?php echo $json_o->data->user->username;?></h1>
 				<ul style="list-style-type: none; height: 80px; margin: auto 0 0 -60px;">
-				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;"><?php echo $followers;?> Followers</li>
+				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;"><?php echo $photocount;?> Photos -</li>
+				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;"><?php echo $followers;?> Followers -</li>
 				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;"><?php echo $following;?> Following</li>
-				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;"><?php echo $photocount;?> Photos</li>
+
 				</ul>
 			</div>
 
