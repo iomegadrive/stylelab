@@ -19,8 +19,6 @@
 
 	</div> <!-- ends image_container class-->
 
-<!--	<hr style="width: 668px; height:0px; color:none; background:none; border:none; border-top:1px solid #ddd; border-bottom:1px solid #999;"/> -->
-
 	<div class="meta_container" style="width: 688px;display: block; margin-left: auto; margin-right: auto;">
 
 		<div class="user_info" style=" height: 200px;">
@@ -31,6 +29,11 @@
 		
 			<div class="profile_name" style="float: right; width: 450px; margin-top: 40px; margin-left: 40px;">
 				<h1 style="color: white;"><?php echo $json_o->data->user->username;?></h1>
+				<ul style="list-style-type: none; height: 80px; margin: auto 0 0 -60px;">
+				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;">Followers: <?php echo $followers;?></li>
+				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;">Following: <?php echo $following;?></li>
+				<li style="float: left;padding-left: 20px; padding-right: 10px; display: block; line-height: 40px; font: 18px 'Lucida Grande', Helvetica; background-color: transparent; color: #fff;">Photos: <?php echo $photocount;?></li>
+				</ul>
 			</div>
 
 		</div> <!-- ends user_info-->

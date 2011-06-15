@@ -25,7 +25,16 @@ class Home extends CI_Controller {
 
 	{
 		$temp = $this->uri->segment(3);
-		$data['json_o'] = json_decode(file_get_contents("https://api.instagram.com/v1/media/$temp?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5"));
+		$photoinfo = json_decode(file_get_contents("https://api.instagram.com/v1/media/$temp?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5"));
+		$userid = $photoinfo->data->user->id;
+		$userinfo = json_decode(file_get_contents("https://api.instagram.com/v1/users/$userid/?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5"));
+		$userfollowers = $userinfo->data->counts->followed_by;
+		$userfollows = $userinfo->data->counts->follows;
+		$userphotocount = $userinfo->data->counts->media;
+		$data['json_o'] = $photoinfo;
+		$data['followers'] = $userfollowers;
+		$data['following'] = $userfollows;
+		$data['photocount'] = $userphotocount;
 		$this->load->view('photo_view', $data);
 	}
 
@@ -33,8 +42,10 @@ class Home extends CI_Controller {
 
 	{
 		$temp = $this->uri->segment(3);
-		$tempjson = json_decode(file_get_contents("https://api.instagram.com/v1/tags/fashion/media/recent?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5&max_tag_id=$temp"));
-		$data['json_o'] = $tempjson;
+		$photoinfo = json_decode(file_get_contents("https://api.instagram.com/v1/tags/fashion/media/recent?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5&max_tag_id=$temp"));
+		$userid = $photoinfo->data->user->id;
+		$userinfo = json_decode(file_get_contents("https://api.instagram.com/v1/users/$userid/?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5"));
+		$data['json_o'] = $photoid;
 		$data['tempuri'] = $temp;
 		$this->load->view('home_view', $data);
 	}
