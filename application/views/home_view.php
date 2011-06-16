@@ -1,49 +1,24 @@
 <html>
 <head>
-<title>Home
+<title>Stylegram - tag your photos with #fashion and share with the world!
 </title>
 
 <link rel="stylesheet" type="text/css" href="/style/style.css"/>
 
 <body>
 
-<div class="main" style="width: 660px;display: block; margin-left: auto; margin-right: auto; margin-top: 30px;">
+<div class="main" style="width: 696px; display: block; margin-left: auto; margin-right: auto; margin-top: 30px;">
 
 <?php foreach($json_o->data as $p): ?>
-
-	<div class="polaroid" style="border-radius: 5px; width: 320px; height: 392px; background-color: white; margin: 30px auto 30px auto;box-shadow: 3px 3px 5px #111;">
-
-		<div class="polaroid_image_container" style="width: 306px; display: block; margin: auto;">
-
-			<div class="polaroid_image" style="height: 306px; width: 306px; margin-top: 30px;">
-
-				<?php echo anchor('home/view/'.$p->id, '<img src="'.$p->images->low_resolution->url.'"></a><br/><br/>');?>
-
-			</div> <!-- end polaroid_image--> 
-
-			<div class="polaroid_user" style="height:60px; margin-top: 10px;">
-
-				<div class="polaroid_user_photo" style="float: left;">
-
-				<?php echo '<img src="'.$p->user->profile_picture.'" width="50"/>';?>
-
-				</div> <!-- end polaroid_user_photo-->
-				
-				<div class="polaroid_user_photo_info" style="float: right; width: 240px; margin-left: 10px;">
-
-				<?php echo $p->user->username;?>
-				
-				</div> <!-- end polaroid_user_photo_info-->	
-
-			</div> <!-- end polaroid_user-->
-
-		</div> <!-- end polaroid_image_container-->
-
-	</div> <!-- end polaroid-->
+			
+				<div class="pic<?php echo ++$i;?>" style="float: left; background: #eee; border: 1px solid #fff; padding: 10px 10px 100px 10px; margin: 10px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;box-shadow: 0 2px 15px #000; -webkit-box-shadow: 0 2px 15px #000; -moz-box-shadow: 0 2px 15px #000;"><?php echo anchor('home/view/'.$p->id, '<img src="'.$p->images->low_resolution->url.'"></a>');?></div>
 
 <?php endforeach;?>
 
+
 </div>
+
+<div style="clear: both;">
 
 <?php if (empty($tempuri)) {
 		  echo '';
@@ -59,6 +34,7 @@
 		echo anchor('home/browse/'.$json_o->pagination->next_max_tag_id, 'Next');
 		}?></p>
 
+</div>
 
 </body>
 </html>
