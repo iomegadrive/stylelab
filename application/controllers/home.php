@@ -14,10 +14,29 @@ class Home extends CI_Controller {
 	function index()
 
 	{
-		$temp = $this->uri->segment(3);
-		$tempjson = json_decode(file_get_contents("https://api.instagram.com/v1/tags/fashion/media/recent?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5&max_tag_id=$temp"));
-		$data['json_o'] = $tempjson;
-		$data['tempuri'] = $temp;
+		$uri = $this->uri->segment(3);
+		$photoinfo = json_decode(file_get_contents("https://api.instagram.com/v1/tags/fashion/media/recent?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5&max_tag_id=$uri"));
+
+		$nextmaxtagid = $photoinfo->pagination->next_max_tag_id;
+	
+		$data['photoinfo'] = $photoinfo;
+		$data['nextmaxtagid'] = $nextmaxtagid;
+		$data['uri'] = $uri;
+		$data['i'] = 0;
+		$this->load->view('home_view', $data);
+	}
+
+	function browse()
+
+	{
+		$uri = $this->uri->segment(3);
+		$photoinfo = json_decode(file_get_contents("https://api.instagram.com/v1/tags/fashion/media/recent?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5&max_tag_id=$uri"));
+
+		$nextmaxtagid = $photoinfo->pagination->next_max_tag_id;
+	
+		$data['photoinfo'] = $photoinfo;
+		$data['nextmaxtagid'] = $nextmaxtagid;
+		$data['uri'] = $uri;
 		$data['i'] = 0;
 		$this->load->view('home_view', $data);
 	}
@@ -53,17 +72,6 @@ class Home extends CI_Controller {
 		$data['following'] = $userfollows;
 		$data['photocount'] = $userphotocount;
 		$this->load->view('photo_view', $data);
-	}
-
-	function browse()
-
-	{
-		$temp = $this->uri->segment(3);
-		$tempjson = json_decode(file_get_contents("https://api.instagram.com/v1/tags/fashion/media/recent?access_token=282652.f59def8.c140637f88d04f5ab7123e190adf55e5&max_tag_id=$temp"));
-		$data['json_o'] = $tempjson;
-		$data['tempuri'] = $temp;
-		$data['i'] = 0;
-		$this->load->view('home_view', $data);
 	}
 
 }

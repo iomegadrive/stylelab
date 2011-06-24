@@ -3,23 +3,35 @@ body {
 	background-position: top center;
 }
 
-div.pic1, div.pic6, div.pic12, div.pic18 {
+div.pic1, div.pic4, div.pic7, div.pic12, div.pic18 {
 	z-index: 1;
 	-webkit-transform: rotate(-10deg);
 	-moz-transform: rotate(-10deg);
 }
 
-div.pic2, div.pic5, div.pic8, div.pic11, div.pic13, div.pic16, div.pic19 {
+div.pic2, div.pic8, div.pic11, div.pic14, div.pic16 {
 	z-index: 5;
-	-webkit-transform: rotate(8deg);
-	-moz-transform: rotate(8deg);
+	-webkit-transform: rotate(6deg);
+	-moz-transform: rotate(6deg);
 }
 
-div.pic3, div.pic7, div.pic15, div.pic20 {
-	z-index: 5;
+div.pic3, div.pic6, div.pic15, div.pic10, div.pic19 {
+	z-index: 3;
 	-webkit-transform: rotate(3deg);
 	-moz-transform: rotate(3deg);
 }
 
+div.pic5, div.pic9, div.pic13, div.pic17, div.pic20 {
+	z-index: 2;
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+}
+
+body {
+	font: 12px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif; 
+	background-color: transparent; 
+	color: #192025; 
+	-webkit-font-smoothing: antialiased;
+}
 
 
