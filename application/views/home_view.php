@@ -14,9 +14,9 @@
 
 <?php foreach($photoinfo->data as $p): ?>
 			
-				<div class="pic<?php echo ++$i;?>" style="float: left; background: #eee; border: 1px solid #fff; padding: 10px 10px 8px 10px; margin: 10px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;box-shadow: 0 2px 15px #000; -webkit-box-shadow: 0 2px 15px #000; -moz-box-shadow: 0 2px 15px #000;">
+				<div class="pic<?php echo rand(1,4);?>" style="float: left; background: #eee; border: 1px solid #fff; padding: 10px 10px 8px 10px; margin: 10px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;box-shadow: 0 2px 15px #000; -webkit-box-shadow: 0 2px 15px #000; -moz-box-shadow: 0 2px 15px #000;">
 
-					<?php echo anchor('home/view/'.$p->id, '<img src="'.$p->images->low_resolution->url.'"></a>');?>
+					<?php echo anchor('home/view/'.$p->id, '<img width="306px" height="306px" src="'.$p->images->low_resolution->url.'"></a>');?>
 					
 					<div class="user_container" style="margin: 10px 0 0 0; width: 306px;">
 					

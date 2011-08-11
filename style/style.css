@@ -3,26 +3,26 @@ body {
 	background-position: top center;
 }
 
-div.pic1, div.pic4, div.pic7, div.pic12, div.pic18 {
+div.pic1 {
 	z-index: 1;
 	-webkit-transform: rotate(-10deg);
 	-moz-transform: rotate(-10deg);
 }
 
-div.pic2, div.pic8, div.pic11, div.pic14, div.pic16 {
-	z-index: 5;
-	-webkit-transform: rotate(6deg);
-	-moz-transform: rotate(6deg);
+div.pic2 {
+	z-index: 2;
+	-webkit-transform: rotate(8deg);
+	-moz-transform: rotate(8deg);
 }
 
-div.pic3, div.pic6, div.pic15, div.pic10, div.pic19 {
+div.pic3 {
 	z-index: 3;
 	-webkit-transform: rotate(3deg);
 	-moz-transform: rotate(3deg);
 }
 
-div.pic5, div.pic9, div.pic13, div.pic17, div.pic20 {
-	z-index: 2;
+div.pic4 {
+	z-index: 4;
 	-webkit-transform: rotate(-5deg);
 	-moz-transform: rotate(-5deg);
 }
